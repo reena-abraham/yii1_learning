@@ -1,0 +1,469 @@
+2025/08/25 11:00:52 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "demo/index". in C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(141): CWebApplication->runController('demo/index')
+#1 C:\xampp\htdocs\yii-sample\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yiiapp\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiiapp/index.php?r=demo/index
+---
+2025/08/25 11:05:32 [error] [exception.CException] CException: DemoController cannot find the requested view "welcome". in C:\xampp\htdocs\yii-sample\framework\web\CController.php:881
+Stack trace:
+#0 C:\xampp\htdocs\yii-sample\framework\web\CController.php(785): CController->renderPartial('welcome', Array, true)
+#1 C:\xampp\htdocs\yiiapp\protected\controllers\DemoController.php(11): CController->render('welcome', Array)
+#2 [internal function]: DemoController->actionWelcome('reena')
+#3 C:\xampp\htdocs\yii-sample\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(DemoController), Array)
+#4 C:\xampp\htdocs\yii-sample\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(DemoController), Object(ReflectionMethod), Array)
+#5 C:\xampp\htdocs\yii-sample\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\yii-sample\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\yii-sample\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(282): CController->run('welcome')
+#9 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(141): CWebApplication->runController('demo/welcome')
+#10 C:\xampp\htdocs\yii-sample\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\yiiapp\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/yiiapp/index.php?r=demo/welcome&name=reena
+---
+2025/08/25 11:08:14 [error] [exception.CException] CException: DemoController cannot find the requested view "welcome". in C:\xampp\htdocs\yii-sample\framework\web\CController.php:881
+Stack trace:
+#0 C:\xampp\htdocs\yii-sample\framework\web\CController.php(785): CController->renderPartial('welcome', Array, true)
+#1 C:\xampp\htdocs\yiiapp\protected\controllers\DemoController.php(12): CController->render('welcome', Array)
+#2 [internal function]: DemoController->actionWelcome('reena')
+#3 C:\xampp\htdocs\yii-sample\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(DemoController), Array)
+#4 C:\xampp\htdocs\yii-sample\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(DemoController), Object(ReflectionMethod), Array)
+#5 C:\xampp\htdocs\yii-sample\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\yii-sample\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\yii-sample\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(282): CController->run('welcome')
+#9 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(141): CWebApplication->runController('demo/welcome')
+#10 C:\xampp\htdocs\yii-sample\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\yiiapp\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/yiiapp/index.php?r=demo/welcome&name=reena
+---
+2025/08/25 11:08:16 [error] [exception.CException] CException: DemoController cannot find the requested view "welcome". in C:\xampp\htdocs\yii-sample\framework\web\CController.php:881
+Stack trace:
+#0 C:\xampp\htdocs\yii-sample\framework\web\CController.php(785): CController->renderPartial('welcome', Array, true)
+#1 C:\xampp\htdocs\yiiapp\protected\controllers\DemoController.php(12): CController->render('welcome', Array)
+#2 [internal function]: DemoController->actionWelcome('reena')
+#3 C:\xampp\htdocs\yii-sample\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(DemoController), Array)
+#4 C:\xampp\htdocs\yii-sample\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(DemoController), Object(ReflectionMethod), Array)
+#5 C:\xampp\htdocs\yii-sample\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\yii-sample\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\yii-sample\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(282): CController->run('welcome')
+#9 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(141): CWebApplication->runController('demo/welcome')
+#10 C:\xampp\htdocs\yii-sample\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\yiiapp\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/yiiapp/index.php?r=demo/welcome&name=reena
+---
+2025/08/25 11:09:07 [error] [exception.CException] CException: DemoController cannot find the requested view "welcome". in C:\xampp\htdocs\yii-sample\framework\web\CController.php:881
+Stack trace:
+#0 C:\xampp\htdocs\yii-sample\framework\web\CController.php(785): CController->renderPartial('welcome', Array, true)
+#1 C:\xampp\htdocs\yiiapp\protected\controllers\DemoController.php(12): CController->render('welcome', Array)
+#2 [internal function]: DemoController->actionWelcome('reena')
+#3 C:\xampp\htdocs\yii-sample\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(DemoController), Array)
+#4 C:\xampp\htdocs\yii-sample\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(DemoController), Object(ReflectionMethod), Array)
+#5 C:\xampp\htdocs\yii-sample\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\yii-sample\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\yii-sample\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(282): CController->run('welcome')
+#9 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(141): CWebApplication->runController('demo/welcome')
+#10 C:\xampp\htdocs\yii-sample\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\yiiapp\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/yiiapp/index.php?r=demo/welcome&name=reena
+---
+2025/08/25 11:14:26 [error] [exception.CHttpException.400] CHttpException: Your request is invalid. in C:\xampp\htdocs\yii-sample\framework\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\yii-sample\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii-sample\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii-sample\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(282): CController->run('welcome')
+#4 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(141): CWebApplication->runController('demo/welcome')
+#5 C:\xampp\htdocs\yii-sample\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\yiiapp\index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/yiiapp/index.php?r=demo/welcome
+---
+2025/08/25 14:07:26 [error] [exception.CHttpException.400] CHttpException: Your request is invalid. in C:\xampp\htdocs\yii-sample\framework\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\yii-sample\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii-sample\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii-sample\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(282): CController->run('welcome')
+#4 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(141): CWebApplication->runController('demo/welcome')
+#5 C:\xampp\htdocs\yii-sample\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\yiiapp\index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/yiiapp/index.php?r=demo/welcome
+HTTP_REFERER=http://localhost/yiiapp/index.php?r=site/index
+---
+2025/08/25 14:33:26 [error] [php] Undefined variable: contents (C:\xampp\htdocs\yiiapp\protected\views\layouts\main.php:47)
+Stack trace:
+#0 C:\xampp\htdocs\yii-sample\framework\web\widgets\CContentDecorator.php(76): SiteController->renderFile()
+#1 C:\xampp\htdocs\yii-sample\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate()
+#2 C:\xampp\htdocs\yii-sample\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput()
+#3 C:\xampp\htdocs\yii-sample\framework\web\CBaseController.php(215): CContentDecorator->run()
+#4 C:\xampp\htdocs\yii-sample\framework\web\CBaseController.php(309): SiteController->endWidget()
+#5 C:\xampp\htdocs\yiiapp\protected\views\layouts\column1.php(6): SiteController->endContent()
+#6 C:\xampp\htdocs\yii-sample\framework\web\CBaseController.php(126): require()
+#7 C:\xampp\htdocs\yii-sample\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#8 C:\xampp\htdocs\yii-sample\framework\web\CController.php(787): SiteController->renderFile()
+#9 C:\xampp\htdocs\yiiapp\protected\controllers\SiteController.php(33): SiteController->render()
+#10 C:\xampp\htdocs\yii-sample\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#11 C:\xampp\htdocs\yii-sample\framework\web\CController.php(308): CInlineAction->runWithParams()
+#12 C:\xampp\htdocs\yii-sample\framework\web\CController.php(286): SiteController->runAction()
+#13 C:\xampp\htdocs\yii-sample\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#14 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(282): SiteController->run()
+#15 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#16 C:\xampp\htdocs\yii-sample\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\yiiapp\index.php(13): CWebApplication->run()
+REQUEST_URI=/yiiapp/index.php?r=site/index
+in C:\xampp\htdocs\yiiapp\protected\views\layouts\main.php (47)
+in C:\xampp\htdocs\yiiapp\protected\views\layouts\column1.php (6)
+in C:\xampp\htdocs\yiiapp\protected\controllers\SiteController.php (33)
+2025/08/25 15:09:47 [error] [exception.ParseError] ParseError: syntax error, unexpected '}', expecting end of file in C:\xampp\htdocs\yiiapp\protected\controllers\SiteController.php:128
+Stack trace:
+#0 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(276): CWebApplication->createController('TestDb/')
+#1 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(141): CWebApplication->runController('site/TestDb')
+#2 C:\xampp\htdocs\yii-sample\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#3 C:\xampp\htdocs\yiiapp\index.php(13): CApplication->run()
+#4 {main}
+REQUEST_URI=/yiiapp/index.php?r=site/TestDb
+---
+2025/08/25 15:33:07 [error] [exception.Error] Error: Cannot instantiate abstract class CActiveRecord in C:\xampp\htdocs\yii-sample\framework\db\ar\CActiveRecord.php:397
+Stack trace:
+#0 C:\xampp\htdocs\yiiapp\protected\controllers\SiteController.php(34): CActiveRecord::model()
+#1 C:\xampp\htdocs\yii-sample\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#2 C:\xampp\htdocs\yii-sample\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\yii-sample\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\yii-sample\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(282): CController->run('')
+#6 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#7 C:\xampp\htdocs\yii-sample\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\yiiapp\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/yiiapp/index.php
+---
+2025/08/25 15:35:54 [error] [exception.Error] Error: Cannot instantiate abstract class CActiveRecord in C:\xampp\htdocs\yii-sample\framework\db\ar\CActiveRecord.php:397
+Stack trace:
+#0 C:\xampp\htdocs\yiiapp\protected\controllers\SiteController.php(34): CActiveRecord::model()
+#1 C:\xampp\htdocs\yii-sample\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#2 C:\xampp\htdocs\yii-sample\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\yii-sample\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\yii-sample\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(282): CController->run('')
+#6 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#7 C:\xampp\htdocs\yii-sample\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\yiiapp\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/yiiapp/
+---
+2025/08/25 15:45:17 [error] [exception.Error] Error: Cannot instantiate abstract class CActiveRecord in C:\xampp\htdocs\yii-sample\framework\db\ar\CActiveRecord.php:397
+Stack trace:
+#0 C:\xampp\htdocs\yiiapp\protected\controllers\SiteController.php(34): CActiveRecord::model()
+#1 C:\xampp\htdocs\yii-sample\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#2 C:\xampp\htdocs\yii-sample\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\yii-sample\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\yii-sample\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(282): CController->run('index')
+#6 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index')
+#7 C:\xampp\htdocs\yii-sample\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\yiiapp\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/yiiapp/index.php?r=site/index
+HTTP_REFERER=http://localhost/yiiapp/index.php?r=site/page&view=about
+---
+2025/08/25 16:05:40 [error] [exception.Error] Error: Cannot instantiate abstract class CActiveRecord in C:\xampp\htdocs\yii-sample\framework\db\ar\CActiveRecord.php:397
+Stack trace:
+#0 C:\xampp\htdocs\yiiapp\protected\controllers\SiteController.php(34): CActiveRecord::model()
+#1 C:\xampp\htdocs\yii-sample\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#2 C:\xampp\htdocs\yii-sample\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\yii-sample\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\yii-sample\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(282): CController->run('index')
+#6 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index')
+#7 C:\xampp\htdocs\yii-sample\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\yiiapp\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/yiiapp/index.php?r=site/index
+HTTP_REFERER=http://localhost/yiiapp/index.php?r=site/page&view=about
+---
+2025/08/25 16:06:00 [error] [exception.Error] Error: Cannot instantiate abstract class CActiveRecord in C:\xampp\htdocs\yii-sample\framework\db\ar\CActiveRecord.php:397
+Stack trace:
+#0 C:\xampp\htdocs\yiiapp\protected\controllers\SiteController.php(34): CActiveRecord::model()
+#1 C:\xampp\htdocs\yii-sample\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#2 C:\xampp\htdocs\yii-sample\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\yii-sample\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\yii-sample\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(282): CController->run('index')
+#6 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index')
+#7 C:\xampp\htdocs\yii-sample\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\yiiapp\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/yiiapp/index.php?r=site/index
+HTTP_REFERER=http://localhost/yiiapp/index.php?r=site/page&view=about
+---
+2025/08/25 16:06:02 [error] [exception.Error] Error: Cannot instantiate abstract class CActiveRecord in C:\xampp\htdocs\yii-sample\framework\db\ar\CActiveRecord.php:397
+Stack trace:
+#0 C:\xampp\htdocs\yiiapp\protected\controllers\SiteController.php(34): CActiveRecord::model()
+#1 C:\xampp\htdocs\yii-sample\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#2 C:\xampp\htdocs\yii-sample\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\yii-sample\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\yii-sample\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(282): CController->run('index')
+#6 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index')
+#7 C:\xampp\htdocs\yii-sample\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\yiiapp\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/yiiapp/index.php?r=site/index
+HTTP_REFERER=http://localhost/yiiapp/index.php?r=site/page&view=about
+---
+2025/08/25 16:06:03 [error] [exception.Error] Error: Cannot instantiate abstract class CActiveRecord in C:\xampp\htdocs\yii-sample\framework\db\ar\CActiveRecord.php:397
+Stack trace:
+#0 C:\xampp\htdocs\yiiapp\protected\controllers\SiteController.php(34): CActiveRecord::model()
+#1 C:\xampp\htdocs\yii-sample\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#2 C:\xampp\htdocs\yii-sample\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\yii-sample\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\yii-sample\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(282): CController->run('index')
+#6 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index')
+#7 C:\xampp\htdocs\yii-sample\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\yiiapp\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/yiiapp/index.php?r=site/index
+HTTP_REFERER=http://localhost/yiiapp/index.php?r=site/page&view=about
+---
+2025/08/25 16:10:49 [error] [exception.Error] Error: Cannot instantiate abstract class CActiveRecord in C:\xampp\htdocs\yii-sample\framework\db\ar\CActiveRecord.php:397
+Stack trace:
+#0 C:\xampp\htdocs\yiiapp\protected\controllers\SiteController.php(34): CActiveRecord::model()
+#1 C:\xampp\htdocs\yii-sample\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#2 C:\xampp\htdocs\yii-sample\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\yii-sample\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\yii-sample\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(282): CController->run('index')
+#6 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index')
+#7 C:\xampp\htdocs\yii-sample\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\yiiapp\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/yiiapp/index.php?r=site/index
+HTTP_REFERER=http://localhost/yiiapp/index.php?r=site/page&view=about
+---
+2025/08/25 18:03:44 [error] [php] Array to string conversion (C:\xampp\htdocs\yiiapp\protected\views\site\index.php:21)
+Stack trace:
+#0 C:\xampp\htdocs\yii-sample\framework\web\CController.php(872): SiteController->renderFile()
+#1 C:\xampp\htdocs\yii-sample\framework\web\CController.php(785): SiteController->renderPartial()
+#2 C:\xampp\htdocs\yiiapp\protected\controllers\SiteController.php(35): SiteController->render()
+#3 C:\xampp\htdocs\yii-sample\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#4 C:\xampp\htdocs\yii-sample\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii-sample\framework\web\CController.php(286): SiteController->runAction()
+#6 C:\xampp\htdocs\yii-sample\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii-sample\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\yiiapp\index.php(13): CWebApplication->run()
+REQUEST_URI=/yiiapp/index.php?r=site/index
+in C:\xampp\htdocs\yiiapp\protected\views\site\index.php (21)
+in C:\xampp\htdocs\yiiapp\protected\controllers\SiteController.php (35)
+in C:\xampp\htdocs\yiiapp\index.php (13)
+2025/08/25 18:03:56 [error] [exception.Error] Error: Object of class User could not be converted to string in C:\xampp\htdocs\yiiapp\protected\views\site\index.php:21
+Stack trace:
+#0 C:\xampp\htdocs\yii-sample\framework\web\CBaseController.php(126): require()
+#1 C:\xampp\htdocs\yii-sample\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#2 C:\xampp\htdocs\yii-sample\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#3 C:\xampp\htdocs\yii-sample\framework\web\CController.php(785): CController->renderPartial('index', Array, true)
+#4 C:\xampp\htdocs\yiiapp\protected\controllers\SiteController.php(35): CController->render('index', Array)
+#5 C:\xampp\htdocs\yii-sample\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#6 C:\xampp\htdocs\yii-sample\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\yii-sample\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\yii-sample\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(282): CController->run('index')
+#10 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index')
+#11 C:\xampp\htdocs\yii-sample\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\yiiapp\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/yiiapp/index.php?r=site/index
+HTTP_REFERER=http://localhost/yiiapp/index.php?r=site/page&view=about
+---
+2025/08/25 18:04:11 [error] [php] Trying to get property 'username' of non-object (C:\xampp\htdocs\yiiapp\protected\views\site\index.php:21)
+Stack trace:
+#0 C:\xampp\htdocs\yii-sample\framework\web\CController.php(872): SiteController->renderFile()
+#1 C:\xampp\htdocs\yii-sample\framework\web\CController.php(785): SiteController->renderPartial()
+#2 C:\xampp\htdocs\yiiapp\protected\controllers\SiteController.php(35): SiteController->render()
+#3 C:\xampp\htdocs\yii-sample\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#4 C:\xampp\htdocs\yii-sample\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii-sample\framework\web\CController.php(286): SiteController->runAction()
+#6 C:\xampp\htdocs\yii-sample\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii-sample\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\yiiapp\index.php(13): CWebApplication->run()
+REQUEST_URI=/yiiapp/index.php?r=site/index
+in C:\xampp\htdocs\yiiapp\protected\views\site\index.php (21)
+in C:\xampp\htdocs\yiiapp\protected\controllers\SiteController.php (35)
+in C:\xampp\htdocs\yiiapp\index.php (13)
+2025/08/25 18:05:55 [error] [exception.CException] CException: User and its behaviors do not have a method or closure named "first". in C:\xampp\htdocs\yii-sample\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\yii-sample\framework\db\ar\CActiveRecord.php(229): CComponent->__call('first', Array)
+#1 C:\xampp\htdocs\yiiapp\protected\controllers\SiteController.php(34): CActiveRecord->__call('first', Array)
+#2 C:\xampp\htdocs\yii-sample\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#3 C:\xampp\htdocs\yii-sample\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii-sample\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii-sample\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(282): CController->run('index')
+#7 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index')
+#8 C:\xampp\htdocs\yii-sample\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\yiiapp\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/yiiapp/index.php?r=site/index
+HTTP_REFERER=http://localhost/yiiapp/index.php?r=site/page&view=about
+---
+2025/08/25 18:06:50 [error] [php] Use of undefined constant username - assumed 'username' (this will throw an Error in a future version of PHP) (C:\xampp\htdocs\yiiapp\protected\controllers\SiteController.php:35)
+Stack trace:
+#0 C:\xampp\htdocs\yii-sample\framework\web\CController.php(286): SiteController->runAction()
+#1 C:\xampp\htdocs\yii-sample\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#2 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(282): SiteController->run()
+#3 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\yii-sample\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\yiiapp\index.php(13): CWebApplication->run()
+REQUEST_URI=/yiiapp/index.php?r=site/index
+in C:\xampp\htdocs\yiiapp\protected\controllers\SiteController.php (35)
+in C:\xampp\htdocs\yiiapp\index.php (13)
+2025/08/26 06:44:28 [error] [exception.CDbException] CDbException: CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1049] Unknown database 'yii_appp' in C:\xampp\htdocs\yii-sample\framework\db\CDbConnection.php:399
+Stack trace:
+#0 C:\xampp\htdocs\yii-sample\framework\db\CDbConnection.php(347): CDbConnection->open()
+#1 C:\xampp\htdocs\yii-sample\framework\db\CDbConnection.php(325): CDbConnection->setActive(true)
+#2 C:\xampp\htdocs\yii-sample\framework\base\CModule.php(394): CDbConnection->init()
+#3 C:\xampp\htdocs\yii-sample\framework\base\CModule.php(103): CModule->getComponent('db')
+#4 C:\xampp\htdocs\yiiapp\protected\controllers\SiteController.php(117): CModule->__get('db')
+#5 C:\xampp\htdocs\yii-sample\framework\web\actions\CInlineAction.php(49): SiteController->actionTestDb()
+#6 C:\xampp\htdocs\yii-sample\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\yii-sample\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\yii-sample\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(282): CController->run('TestDb')
+#10 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(141): CWebApplication->runController('site/TestDb')
+#11 C:\xampp\htdocs\yii-sample\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\yiiapp\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/yiiapp/index.php?r=site/TestDb
+---
+2025/08/26 06:46:14 [error] [exception.Error] Error: Call to undefined function dd() in C:\xampp\htdocs\yiiapp\protected\controllers\SiteController.php:119
+Stack trace:
+#0 C:\xampp\htdocs\yii-sample\framework\web\actions\CInlineAction.php(49): SiteController->actionTestDb()
+#1 C:\xampp\htdocs\yii-sample\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\yii-sample\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\yii-sample\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(282): CController->run('TestDb')
+#5 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(141): CWebApplication->runController('site/TestDb')
+#6 C:\xampp\htdocs\yii-sample\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\yiiapp\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/yiiapp/index.php?r=site/TestDb
+---
+2025/08/26 08:32:46 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "gii". in C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(141): CWebApplication->runController('gii')
+#1 C:\xampp\htdocs\yii-sample\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yiiapp\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiiapp/index.php?r=gii
+---
+2025/08/26 09:17:40 [error] [php] count(): Parameter must be an array or an object that implements Countable (C:\xampp\htdocs\yii-sample\framework\gii\generators\model\ModelCode.php:371)
+Stack trace:
+#0 C:\xampp\htdocs\yii-sample\framework\gii\CCodeGenerator.php(162): ModelCode->prepare()
+#1 C:\xampp\htdocs\yii-sample\framework\gii\CCodeGenerator.php(63): ModelGenerator->prepare()
+#2 C:\xampp\htdocs\yii-sample\framework\web\actions\CInlineAction.php(49): ModelGenerator->actionIndex()
+#3 C:\xampp\htdocs\yii-sample\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 C:\xampp\htdocs\yii-sample\framework\web\CController.php(286): ModelGenerator->runAction()
+#5 C:\xampp\htdocs\yii-sample\framework\web\CController.php(265): ModelGenerator->runActionWithFilters()
+#6 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(282): ModelGenerator->run()
+#7 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\xampp\htdocs\yii-sample\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\yiiapp\index.php(13): CWebApplication->run()
+REQUEST_URI=/yiiapp/index.php?r=gii/model/index
+in C:\xampp\htdocs\yiiapp\index.php (13)
+2025/08/26 09:18:20 [error] [php] count(): Parameter must be an array or an object that implements Countable (C:\xampp\htdocs\yii-sample\framework\gii\generators\model\ModelCode.php:371)
+Stack trace:
+#0 C:\xampp\htdocs\yii-sample\framework\gii\CCodeGenerator.php(162): ModelCode->prepare()
+#1 C:\xampp\htdocs\yii-sample\framework\gii\CCodeGenerator.php(63): ModelGenerator->prepare()
+#2 C:\xampp\htdocs\yii-sample\framework\web\actions\CInlineAction.php(49): ModelGenerator->actionIndex()
+#3 C:\xampp\htdocs\yii-sample\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 C:\xampp\htdocs\yii-sample\framework\web\CController.php(286): ModelGenerator->runAction()
+#5 C:\xampp\htdocs\yii-sample\framework\web\CController.php(265): ModelGenerator->runActionWithFilters()
+#6 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(282): ModelGenerator->run()
+#7 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\xampp\htdocs\yii-sample\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\yiiapp\index.php(13): CWebApplication->run()
+REQUEST_URI=/yiiapp/index.php?r=gii/model/index
+in C:\xampp\htdocs\yiiapp\index.php (13)
+2025/08/26 12:00:39 [warning] [application] Failed to set unsafe attribute "id" of "User".
+in C:\xampp\htdocs\yiiapp\protected\controllers\UserController.php (139)
+in C:\xampp\htdocs\yiiapp\index.php (13)
+2025/08/26 12:00:45 [warning] [application] Failed to set unsafe attribute "id" of "User".
+in C:\xampp\htdocs\yiiapp\protected\controllers\UserController.php (139)
+in C:\xampp\htdocs\yiiapp\index.php (13)
+2025/08/26 12:07:38 [warning] [application] Failed to set unsafe attribute "id" of "User".
+in C:\xampp\htdocs\yiiapp\protected\controllers\UserController.php (139)
+in C:\xampp\htdocs\yiiapp\index.php (13)
+2025/08/26 12:07:43 [warning] [application] Failed to set unsafe attribute "id" of "User".
+in C:\xampp\htdocs\yiiapp\protected\controllers\UserController.php (139)
+in C:\xampp\htdocs\yiiapp\index.php (13)
+2025/08/26 13:46:46 [error] [exception.CException] CException: The property "itemView" cannot be empty. in C:\xampp\htdocs\yii-sample\framework\zii\widgets\CListView.php:210
+Stack trace:
+#0 C:\xampp\htdocs\yii-sample\framework\web\CBaseController.php(147): CListView->init()
+#1 C:\xampp\htdocs\yii-sample\framework\web\CBaseController.php(181): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#2 C:\xampp\htdocs\yiiapp\protected\views\user\index.php(18): CBaseController->widget('zii.widgets.CLi...', Array)
+#3 C:\xampp\htdocs\yii-sample\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\yii-sample\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii-sample\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\yii-sample\framework\web\CController.php(785): CController->renderPartial('index', Array, true)
+#7 C:\xampp\htdocs\yiiapp\protected\controllers\UserController.php(127): CController->render('index', Array)
+#8 C:\xampp\htdocs\yii-sample\framework\web\actions\CInlineAction.php(49): UserController->actionIndex()
+#9 C:\xampp\htdocs\yii-sample\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\yii-sample\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\yii-sample\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\xampp\htdocs\yii-sample\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\yii-sample\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii-sample\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii-sample\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\yii-sample\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(282): CController->run('index')
+#18 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(141): CWebApplication->runController('user/index')
+#19 C:\xampp\htdocs\yii-sample\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\yiiapp\index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/yiiapp/user/index
+HTTP_REFERER=http://localhost/yiiapp/site/login
+---
+2025/08/26 13:47:00 [error] [php] require(): Filename cannot be empty (C:\xampp\htdocs\yii-sample\framework\web\CBaseController.php:130)
+Stack trace:
+#0 C:\xampp\htdocs\yii-sample\framework\zii\widgets\CListView.php(291): UserController->renderFile()
+#1 C:\xampp\htdocs\yii-sample\framework\zii\widgets\CBaseListView.php(181): CListView->renderItems()
+#2 unknown(0): CListView->renderSection()
+#3 C:\xampp\htdocs\yii-sample\framework\zii\widgets\CBaseListView.php(164): preg_replace_callback()
+#4 C:\xampp\htdocs\yii-sample\framework\zii\widgets\CBaseListView.php(149): CListView->renderContent()
+#5 C:\xampp\htdocs\yii-sample\framework\web\CBaseController.php(182): CListView->run()
+#6 C:\xampp\htdocs\yiiapp\protected\views\user\index.php(19): UserController->widget()
+#7 C:\xampp\htdocs\yii-sample\framework\web\CBaseController.php(126): require()
+#8 C:\xampp\htdocs\yii-sample\framework\web\CBaseController.php(95): UserController->renderInternal()
+#9 C:\xampp\htdocs\yii-sample\framework\web\CController.php(872): UserController->renderFile()
+#10 C:\xampp\htdocs\yii-sample\framework\web\CController.php(785): UserController->renderPartial()
+#11 C:\xampp\htdocs\yiiapp\protected\controllers\UserController.php(127): UserController->render()
+#12 C:\xampp\htdocs\yii-sample\framework\web\actions\CInlineAction.php(49): UserController->actionIndex()
+#13 C:\xampp\htdocs\yii-sample\framework\web\CController.php(308): CInlineAction->runWithParams()
+#14 C:\xampp\htdocs\yii-sample\framework\web\filters\CFilterChain.php(134): UserController->runAction()
+#15 C:\xampp\htdocs\yii-sample\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#16 C:\xampp\htdocs\yii-sample\framework\web\CController.php(1148): CAccessControlFilter->filter()
+#17 C:\xampp\htdocs\yii-sample\framework\web\filters\CInlineFilter.php(58): UserController->filterAccessControl()
+#18 C:\xampp\htdocs\yii-sample\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#19 C:\xampp\htdocs\yii-sample\framework\web\CController.php(291): CFilterChain->run()
+#20 C:\xampp\htdocs\yii-sample\framework\web\CController.php(265): UserController->runActionWithFilters()
+#21 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(282): UserController->run()
+#22 C:\xampp\htdocs\yii-sample\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#23 C:\xampp\htdocs\yii-sample\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\yiiapp\index.php(13): CWebApplication->run()
+REQUEST_URI=/yiiapp/user/index
+in C:\xampp\htdocs\yiiapp\protected\views\user\index.php (19)
+in C:\xampp\htdocs\yiiapp\protected\controllers\UserController.php (127)
+in C:\xampp\htdocs\yiiapp\index.php (13)
