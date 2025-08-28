@@ -6,7 +6,7 @@ class UserController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/column2';
+	public $layout = '//layouts/column2';
 
 	/**
 	 * @return array action filters
@@ -26,40 +26,20 @@ class UserController extends Controller
 	 */
 	public function accessRules()
 	{
-		// return array(
-		// 	array('allow',  // allow all users to perform 'index' and 'view' actions
-		// 		'actions'=>array('index','view'),
-		// 		'users'=>array('*'),
-		// 	),
-		// 	array('allow', // allow authenticated user to perform 'create' and 'update' actions
-		// 		'actions'=>array('create','update'),
-		// 		'users'=>array('@'),
-		// 	),
-		// 	array('allow', // allow admin user to perform 'admin' and 'delete' actions
-		// 		'actions'=>array('admin','delete'),
-		// 		'users'=>array('@'), 
-		// 	),
-		// 	 array('allow',
-        //     'actions'=>array('admin','permissions'), // ✅ include 'permissions' here
-        //     'users'=>array('@'), // logged-in users only
-            
-        // ),
-		// 	array('deny',  // deny all users
-		// 		'users'=>array('*'),
-		// 	),
-		// );
-		 return array(
-        array('allow',  // allow admin users to access all actions in UserController
-            'actions' => array('index', 'view', 'create', 'update', 'admin', 'delete','permissions'), // list all user management actions here
-            'expression' => function($user) {
-                // check if user is logged in and has role 'admin'
-                return !$user->isGuest && Yii::app()->user->getState('role_id') == 1; // assuming role_id 1 = admin
-            },
-        ),
-        array('deny',  // deny all other users
-            'users' => array('*'),
-        ),
-    );
+		return array(
+			array(
+				'allow',  // allow admin users to access all actions in UserController
+				'actions' => array('index', 'view', 'create', 'update', 'admin', 'delete', 'permissions'), // list all user management actions here
+				'expression' => function ($user) {
+					// check if user is logged in and has role 'admin'
+					return !$user->isGuest && Yii::app()->user->getState('role_id') == 1; // assuming role_id 1 = admin
+				},
+			),
+			array(
+				'deny',  // deny all other users
+				'users' => array('*'),
+			),
+		);
 	}
 
 	/**
@@ -68,8 +48,8 @@ class UserController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$this->render('view',array(
-			'model'=>$this->loadModel($id),
+		$this->render('view', array(
+			'model' => $this->loadModel($id),
 		));
 	}
 
@@ -79,20 +59,19 @@ class UserController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new User;
+		$model = new User;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['User']))
-		{
-			$model->attributes=$_POST['User'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+		if (isset($_POST['User'])) {
+			$model->attributes = $_POST['User'];
+			if ($model->save())
+				$this->redirect(array('view', 'id' => $model->id));
 		}
 
-		$this->render('create',array(
-			'model'=>$model,
+		$this->render('create', array(
+			'model' => $model,
 		));
 	}
 
@@ -103,20 +82,19 @@ class UserController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		$model=$this->loadModel($id);
+		$model = $this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['User']))
-		{
-			$model->attributes=$_POST['User'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+		if (isset($_POST['User'])) {
+			$model->attributes = $_POST['User'];
+			if ($model->save())
+				$this->redirect(array('view', 'id' => $model->id));
 		}
 
-		$this->render('update',array(
-			'model'=>$model,
+		$this->render('update', array(
+			'model' => $model,
 		));
 	}
 
@@ -130,7 +108,7 @@ class UserController extends Controller
 		$this->loadModel($id)->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-		if(!isset($_GET['ajax']))
+		if (!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 	}
 
@@ -139,26 +117,20 @@ class UserController extends Controller
 	 */
 	public function actionIndex()
 	{
-		// $roleId = Yii::app()->user->getState('role_id');
 
-		// $dataProvider=new CActiveDataProvider('User');
-		// $this->render('index',array(
-		// 	'dataProvider'=>$dataProvider,
-		// ));
 		$loggedInUserId = Yii::app()->user->id;
+		// Modify the data provider to exclude the logged-in user
+		$dataProvider = new CActiveDataProvider('User', array(
+			'criteria' => array(
+				'condition' => 'id != :id',  // Exclude the logged-in user
+				'params' => array(':id' => $loggedInUserId),
+			),
+		));
 
-    // Modify the data provider to exclude the logged-in user
-    $dataProvider = new CActiveDataProvider('User', array(
-        'criteria' => array(
-            'condition' => 'id != :id',  // Exclude the logged-in user
-            'params' => array(':id' => $loggedInUserId),
-        ),
-    ));
-
-    // Render the index view with the data provider
-    $this->render('index', array(
-        'dataProvider' => $dataProvider,
-    ));
+		// Render the index view with the data provider
+		$this->render('index', array(
+			'dataProvider' => $dataProvider,
+		));
 	}
 
 	/**
@@ -166,13 +138,13 @@ class UserController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new User('search');
+		$model = new User('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['User']))
-			$model->attributes=$_GET['User'];
+		if (isset($_GET['User']))
+			$model->attributes = $_GET['User'];
 
-		$this->render('admin',array(
-			'model'=>$model,
+		$this->render('admin', array(
+			'model' => $model,
 		));
 	}
 
@@ -185,9 +157,9 @@ class UserController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=User::model()->findByPk($id);
-		if($model===null)
-			throw new CHttpException(404,'The requested page does not exist.');
+		$model = User::model()->findByPk($id);
+		if ($model === null)
+			throw new CHttpException(404, 'The requested page does not exist.');
 		return $model;
 	}
 
@@ -197,8 +169,7 @@ class UserController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='user-form')
-		{
+		if (isset($_POST['ajax']) && $_POST['ajax'] === 'user-form') {
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
@@ -206,38 +177,38 @@ class UserController extends Controller
 
 
 	public function actionPermissions($id)
-{
-    $user = User::model()->findByPk($id);
-    if (!$user) throw new CHttpException(404, 'User not found.');
+	{
+		$user = User::model()->findByPk($id);
+		if (!$user) throw new CHttpException(404, 'User not found.');
 
-    $allPermissions = Permission::model()->findAll();
-    
-    $assignedPermissions = Yii::app()->db->createCommand()
-        ->select('permission_id')
-        ->from('user_permissions')
-        ->where('user_id=:id', array(':id' => $id))
-        ->queryColumn();
+		$allPermissions = Permission::model()->findAll();
 
-    if (isset($_POST['permissions'])) {
-        // Remove existing permissions
-        Yii::app()->db->createCommand()->delete('user_permissions', 'user_id=:id', array(':id' => $id));
+		$assignedPermissions = Yii::app()->db->createCommand()
+			->select('permission_id')
+			->from('user_permissions')
+			->where('user_id=:id', array(':id' => $id))
+			->queryColumn();
 
-        // Add new permissions
-        foreach ($_POST['permissions'] as $permId) {
-            Yii::app()->db->createCommand()->insert('user_permissions', array(
-                'user_id' => $id,
-                'permission_id' => $permId,
-            ));
-        }
+		if (isset($_POST['permissions'])) {
+			// Remove existing permissions
+			Yii::app()->db->createCommand()->delete('user_permissions', 'user_id=:id', array(':id' => $id));
 
-        Yii::app()->user->setFlash('success', 'Permissions updated successfully.');
-        $this->redirect(array('user/admin'));
-    }
+			// Add new permissions
+			foreach ($_POST['permissions'] as $permId) {
+				Yii::app()->db->createCommand()->insert('user_permissions', array(
+					'user_id' => $id,
+					'permission_id' => $permId,
+				));
+			}
 
-    $this->render('permission', array(
-        'user' => $user,
-        'allPermissions' => $allPermissions,
-        'assignedPermissions' => $assignedPermissions,
-    ));
-}
+			Yii::app()->user->setFlash('success', 'Permissions updated successfully.');
+			$this->redirect(array('user/admin'));
+		}
+
+		$this->render('permission', array(
+			'user' => $user,
+			'allPermissions' => $allPermissions,
+			'assignedPermissions' => $assignedPermissions,
+		));
+	}
 }

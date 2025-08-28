@@ -48,9 +48,6 @@ class SiteController extends Controller
 	 */
 	public function actionIndex()
 	{
-		// renders the view file 'protected/views/site/index.php'
-		// using the default layout 'protected/views/layouts/main.php'
-		// /print_r(Yii::app()->user->getState('role_id'));exit;
 		$this->render('index');
 	}
 
@@ -117,7 +114,6 @@ class SiteController extends Controller
 				// Get the logged-in user model
 				$user = User::model()->findByPk(Yii::app()->user->id);
 				$roleId = $user->userRole ? $user->userRole->role_id : null;
-				// print_r($user->role_id);die();
 				// Save role_id in session
 				Yii::app()->user->setState('role_id', $roleId);
 
