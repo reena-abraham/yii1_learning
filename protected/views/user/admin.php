@@ -46,11 +46,25 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'filter'=>$model,
 	'columns'=>array(
 		'id',
-		'first_name',
-		'last_name',
+		'name',
+		'username',
 		'email',
+		//'created_at',
 		array(
 			'class'=>'CButtonColumn',
+			'template' => '{view} {update} {delete} {permissions}',
+
+ 'buttons' => array(
+        'permissions' => array(
+            'label' => 'Assign Permissions', // Tooltip text
+            'imageUrl' => Yii::app()->request->baseUrl . '/images/permission.png',
+            'url' => 'Yii::app()->createUrl("user/permissions", array("id"=>$data->id))',
+            'options' => array(
+                'class' => 'permissions-button',
+                'title' => 'Assign Permissions',
+            ),
+        ),
+    ),
 		),
 	),
 )); ?>

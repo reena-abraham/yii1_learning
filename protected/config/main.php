@@ -49,6 +49,11 @@ return array(
 				// '<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
 		),
+
+		'authManager' => array(
+        'class' => 'CDbAuthManager',  // Use the database-based authorization manager
+        'connectionID' => 'db', // The default database connection
+    ),
 		
 
 		// database settings are configured in database.php

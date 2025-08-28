@@ -1,22 +1,24 @@
 <?php
 
 /**
- * This is the model class for table "user".
+ * This is the model class for table "users".
  *
- * The followings are the available columns in table 'user':
+ * The followings are the available columns in table 'users':
  * @property integer $id
- * @property string $first_name
- * @property string $last_name
+ * @property string $name
+ * @property string $username
  * @property string $email
+ * @property string $created_at
  */
 class User extends CActiveRecord
 {
+	public $role_id;
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'user';
+		return 'users';
 	}
 
 	/**
@@ -27,25 +29,29 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('first_name, last_name, email', 'required'),
-			array('first_name, last_name, email', 'length', 'max'=>255),
+			array('name, username, email,password', 'required'),
+			array('email', 'email'),
+			array('password', 'length', 'min' => 6, 'max' => 255),
+            array('email', 'unique'),
+			array('role_id', 'required'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id,first_name, last_name, email', 'safe', 'on'=>'search'), // only in search scenarion attaributes 
-																			//are safe for mass assignment 
+			array('id, name, username, email, created_at', 'safe', 'on'=>'search'),
 		);
 	}
 
 	/**
 	 * @return array relational rules.
 	 */
-	public function relations()
-	{
-		// NOTE: you may need to adjust the relation name and the related
-		// class name for the relations automatically generated below.
-		return array(
-		);
-	}
+	public function relations() {
+        return [
+			// Each user has one role through user_roles
+            'userRole' => array(self::HAS_ONE,'UserRole','user_id'),
+			'roles' => array(self::BELONGS_TO, 'Role', 'role_id'),
+			'posts' => array(self::HAS_MANY,'Post','user_id'),
+			'permissions' => array(self::MANY_MANY,'Permission','user_permissions(user_id, permission_id)'),
+        ];
+    }
 
 	/**
 	 * @return array customized attribute labels (name=>label)
@@ -54,9 +60,10 @@ class User extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'first_name' => 'First Name',
-			'last_name' => 'Last Name',
+			'name' => 'Name',
+			'username' => 'Username',
 			'email' => 'Email',
+			'created_at' => 'Created At',
 		);
 	}
 
@@ -78,10 +85,21 @@ class User extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
-		$criteria->compare('first_name',$this->first_name,true);
-		$criteria->compare('last_name',$this->last_name,true);
-		$criteria->compare('email',$this->email,true);
+		// $criteria->compare('id',$this->id);
+		// $criteria->compare('name',$this->name,true);
+		// $criteria->compare('username',$this->username,true);
+		// $criteria->compare('email',$this->email,true);
+		// $criteria->compare('created_at',$this->created_at,true);
+		// Join with user_roles table
+    $criteria->with = array('userRole');
+
+    // Filter: only users with role_id = 2 (non-admin)
+    $criteria->compare('userRole.role_id', 2);
+
+    $criteria->compare('t.id', $this->id);
+    $criteria->compare('t.name', $this->name, true);
+    $criteria->compare('t.username', $this->username, true);
+    $criteria->compare('t.email', $this->email, true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

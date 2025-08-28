@@ -20,21 +20,33 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'first_name'); ?>
-		<?php echo $form->textField($model,'first_name',array('size'=>60,'maxlength'=>255)); ?>
-		<?php echo $form->error($model,'first_name'); ?>
+		<?php echo $form->labelEx($model,'id'); ?>
+		<?php echo $form->textField($model,'id'); ?>
+		<?php echo $form->error($model,'id'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'last_name'); ?>
-		<?php echo $form->textField($model,'last_name',array('size'=>60,'maxlength'=>255)); ?>
-		<?php echo $form->error($model,'last_name'); ?>
+		<?php echo $form->labelEx($model,'name'); ?>
+		<?php echo $form->textField($model,'name',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->error($model,'name'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'username'); ?>
+		<?php echo $form->textField($model,'username',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->error($model,'username'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'email'); ?>
 		<?php echo $form->textField($model,'email',array('size'=>60,'maxlength'=>255)); ?>
 		<?php echo $form->error($model,'email'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'created_at'); ?>
+		<?php echo $form->textField($model,'created_at'); ?>
+		<?php echo $form->error($model,'created_at'); ?>
 	</div>
 
 	<div class="row buttons">

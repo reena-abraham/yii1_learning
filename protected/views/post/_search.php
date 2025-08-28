@@ -1,6 +1,6 @@
 <?php
-/* @var $this CategoryController */
-/* @var $model Category */
+/* @var $this PostController */
+/* @var $model Post */
 /* @var $form CActiveForm */
 ?>
 
@@ -17,13 +17,18 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'name'); ?>
-		<?php echo $form->textField($model,'name',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->label($model,'user_id'); ?>
+		<?php echo $form->textField($model,'user_id'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'description'); ?>
-		<?php echo $form->textArea($model,'description',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->label($model,'category_id'); ?>
+		<?php echo $form->textField($model,'category_id'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'title'); ?>
+		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>255)); ?>
 	</div>
 
 	<div class="row buttons">

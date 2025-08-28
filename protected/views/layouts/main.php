@@ -32,10 +32,13 @@
 				array('label'=>'Home', 'url'=>array('/site/index')),
 				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
 				array('label'=>'Contact', 'url'=>array('/site/contact')),
-				array('label'=>'Category', 'url'=>array('/category/index')),
-				array('label'=>'Manage Users', 'url'=>array('/user/index')),
-				// array('label'=>'Manage Users', 'url'=>array('/user/admin'), 'visible'=>!Yii::app()->user->isGuest),
-				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+				// Admin sees all menu items
+            array('label' => 'Users', 'url' => array('/user/index'), 'visible' => !Yii::app()->user->isGuest && Yii::app()->user->role_id == 1),  // Admin only
+            array('label' => 'Categories', 'url' => array('/category/index'), 'visible' =>!Yii::app()->user->isGuest && Yii::app()->user->role_id == 1), // Admin only
+			// Show "Post" link for all logged-in users
+            array('label' => 'Post', 'url' => array('/post/index'), 'visible' => !Yii::app()->user->isGuest), // Visible for both Admin and User	
+			array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+				array('label'=>'Signup', 'url'=>array('/site/signup'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),
 		)); ?>

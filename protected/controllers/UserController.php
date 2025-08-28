@@ -26,23 +26,40 @@ class UserController extends Controller
 	 */
 	public function accessRules()
 	{
-		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
-			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('@'),
-			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
-			),
-			array('deny',  // deny all users
-				'users'=>array('*'),
-			),
-		);
+		// return array(
+		// 	array('allow',  // allow all users to perform 'index' and 'view' actions
+		// 		'actions'=>array('index','view'),
+		// 		'users'=>array('*'),
+		// 	),
+		// 	array('allow', // allow authenticated user to perform 'create' and 'update' actions
+		// 		'actions'=>array('create','update'),
+		// 		'users'=>array('@'),
+		// 	),
+		// 	array('allow', // allow admin user to perform 'admin' and 'delete' actions
+		// 		'actions'=>array('admin','delete'),
+		// 		'users'=>array('@'), 
+		// 	),
+		// 	 array('allow',
+        //     'actions'=>array('admin','permissions'), // ✅ include 'permissions' here
+        //     'users'=>array('@'), // logged-in users only
+            
+        // ),
+		// 	array('deny',  // deny all users
+		// 		'users'=>array('*'),
+		// 	),
+		// );
+		 return array(
+        array('allow',  // allow admin users to access all actions in UserController
+            'actions' => array('index', 'view', 'create', 'update', 'admin', 'delete','permissions'), // list all user management actions here
+            'expression' => function($user) {
+                // check if user is logged in and has role 'admin'
+                return !$user->isGuest && Yii::app()->user->getState('role_id') == 1; // assuming role_id 1 = admin
+            },
+        ),
+        array('deny',  // deny all other users
+            'users' => array('*'),
+        ),
+    );
 	}
 
 	/**
@@ -122,10 +139,26 @@ class UserController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('User');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+		// $roleId = Yii::app()->user->getState('role_id');
+
+		// $dataProvider=new CActiveDataProvider('User');
+		// $this->render('index',array(
+		// 	'dataProvider'=>$dataProvider,
+		// ));
+		$loggedInUserId = Yii::app()->user->id;
+
+    // Modify the data provider to exclude the logged-in user
+    $dataProvider = new CActiveDataProvider('User', array(
+        'criteria' => array(
+            'condition' => 'id != :id',  // Exclude the logged-in user
+            'params' => array(':id' => $loggedInUserId),
+        ),
+    ));
+
+    // Render the index view with the data provider
+    $this->render('index', array(
+        'dataProvider' => $dataProvider,
+    ));
 	}
 
 	/**
@@ -170,4 +203,41 @@ class UserController extends Controller
 			Yii::app()->end();
 		}
 	}
+
+
+	public function actionPermissions($id)
+{
+    $user = User::model()->findByPk($id);
+    if (!$user) throw new CHttpException(404, 'User not found.');
+
+    $allPermissions = Permission::model()->findAll();
+    
+    $assignedPermissions = Yii::app()->db->createCommand()
+        ->select('permission_id')
+        ->from('user_permissions')
+        ->where('user_id=:id', array(':id' => $id))
+        ->queryColumn();
+
+    if (isset($_POST['permissions'])) {
+        // Remove existing permissions
+        Yii::app()->db->createCommand()->delete('user_permissions', 'user_id=:id', array(':id' => $id));
+
+        // Add new permissions
+        foreach ($_POST['permissions'] as $permId) {
+            Yii::app()->db->createCommand()->insert('user_permissions', array(
+                'user_id' => $id,
+                'permission_id' => $permId,
+            ));
+        }
+
+        Yii::app()->user->setFlash('success', 'Permissions updated successfully.');
+        $this->redirect(array('user/admin'));
+    }
+
+    $this->render('permission', array(
+        'user' => $user,
+        'allPermissions' => $allPermissions,
+        'assignedPermissions' => $assignedPermissions,
+    ));
+}
 }

@@ -17,18 +17,23 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'first_name'); ?>
-		<?php echo $form->textField($model,'first_name',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->label($model,'name'); ?>
+		<?php echo $form->textField($model,'name',array('size'=>60,'maxlength'=>255)); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'last_name'); ?>
-		<?php echo $form->textField($model,'last_name',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->label($model,'username'); ?>
+		<?php echo $form->textField($model,'username',array('size'=>60,'maxlength'=>255)); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'email'); ?>
 		<?php echo $form->textField($model,'email',array('size'=>60,'maxlength'=>255)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'created_at'); ?>
+		<?php echo $form->textField($model,'created_at'); ?>
 	</div>
 
 	<div class="row buttons">

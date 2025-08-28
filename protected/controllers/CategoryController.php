@@ -26,23 +26,35 @@ class CategoryController extends Controller
 	 */
 	public function accessRules()
 	{
+		// return array(
+		// 	array('allow',  // allow all users to perform 'index' and 'view' actions
+		// 		'actions'=>array('index','view'),
+		// 		'users'=>array('*'),
+		// 	),
+		// 	array('allow', // allow authenticated user to perform 'create' and 'update' actions
+		// 		'actions'=>array('create','update'),
+		// 		'users'=>array('@'),
+		// 	),
+		// 	array('allow', // allow admin user to perform 'admin' and 'delete' actions
+		// 		'actions'=>array('admin','delete'),
+		// 		'users'=>array('admin'),
+		// 	),
+		// 	array('deny',  // deny all users
+		// 		'users'=>array('*'),
+		// 	),
+		// );
 		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
-			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('@'),
-			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
-			),
-			array('deny',  // deny all users
-				'users'=>array('*'),
-			),
-		);
+        array('allow',
+            'actions' => array('index', 'view', 'create', 'update', 'admin', 'delete'), // list category management actions
+            'expression' => function($user) {
+                // Check if user is logged in and has admin role
+                return !$user->isGuest && Yii::app()->user->getState('role_id') == 1; // assuming role_id 1 is admin
+            },
+        ),
+        array('deny',  // deny all other users
+            'users' => array('*'),
+        ),
+    );
 	}
 
 	/**
